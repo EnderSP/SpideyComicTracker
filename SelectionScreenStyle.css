@@ -1,0 +1,49 @@
+
+
+.selectionMenu
+{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh;
+gap: 10vh;
+
+}
+
+.Spider-Man_616{
+    position: relative;
+    width: 50%;
+}
+.OG
+{
+    width: 20vh;
+    height: auto;
+}
+.btn_616
+{
+    
+}
+.Spider-Man_2000
+{
+    position:relative;
+    width:50%;
+}
+.NOG
+{
+    width:20vh;
+    height: auto;
+    
+}
+.Spider-Man_2018
+{
+    position:relative;
+    width:50%;
+}
+.NNOG
+{
+    width:20vh;
+    height: auto;
+}
+
+
+
