@@ -1,49 +1,52 @@
 
 
-.selectionMenu
-{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 80vh;
-gap: 10vh;
+.selectionMenu {
+    margin-left: 10vh;
+    display: flex;
+    flex-direction: column;      /* Stacked vertically on mobile */
+    justify-content: center;
+    align-items: center;
+    gap: 10vh;
+    min-height: 80vh;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .selectionMenu
+    {
+        flex-direction: row;
+    }
+}
+.selectionMenu>div{
+    
+    width: 100%;
 
 }
-
-.Spider-Man_616{
-    position: relative;
-    width: 50%;
-}
-.OG
-{
-    width: 20vh;
+.selectionMenu img{
+    width: 30vh;
     height: auto;
 }
-.btn_616
+.Spider-Man_616
 {
     
 }
 .Spider-Man_2000
 {
-    position:relative;
-    width:50%;
-}
-.NOG
-{
-    width:20vh;
-    height: auto;
-    
+   
 }
 .Spider-Man_2018
 {
-    position:relative;
-    width:50%;
+    
 }
-.NNOG
-{
-    width:20vh;
-    height: auto;
+.backround-Box {
+    position: sticky;
+   justify-self: center;
+    background-color: #ff5722; /* A vibrant orange color */
+    width: 100vh;              /* Sets the width of your box */
+    height: 2000px;             /* Sets the height of your box */
+    border-radius: 30px;  
+    max-height: 50%;      /* Optional: rounds the corners slightly */
 }
+
 
 
 
