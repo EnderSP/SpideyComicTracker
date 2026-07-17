@@ -30,12 +30,6 @@
     flex-wrap:wrap;
    
 }
-@media (min-width: 768px) {
-    .selectionMenu
-    {
-        flex-direction: row;
-    }
-}
 .comic{
     
 
@@ -51,14 +45,45 @@
 }
 button:hover
 {
-    height: 100vh;
-    width: 20vw;
     border: none;
     background-color: #DB2B39;
     border-radius: 0%;
 }
 
-
-
-
-
+@media (max-width: 796px) {
+    .selectionMenu
+    {
+        flex-direction: row;
+    }
+    button:hover
+{
+    width: 100vw;
+    border: none;
+    background-color: #DB2B39;
+    border-radius: 100%;
+}
+.background-Box
+{
+    position: absolute;
+    width: 100vw;
+    height: 150vh;
+    align-items: reverse;
+    background-color: #29335C;
+    border-radius: 10%;
+    
+}
+}
+ @media (min-width: 796px) {
+    .selectionMenu
+    {
+        height: 100vh;
+        flex-direction: row;
+    }
+    button:hover
+{
+    height: 100vh;
+    border: none;
+    background-color: #DB2B39;
+    border-radius: 0%;
+}
+}
