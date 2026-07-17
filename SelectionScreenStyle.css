@@ -1,14 +1,20 @@
 
-
+.background-Box
+{
+    position: absolute;
+    outline: 2px solid rgb(6, 7, 6);
+    
+}
 .selectionMenu {
-    margin-left: 10vh;
+    position:relative;
+   width: 100vw;
+   height: 95vh;
     display: flex;
-    flex-direction: column;      /* Stacked vertically on mobile */
-    justify-content: center;
-    align-items: center;
-    gap: 10vh;
-    min-height: 80vh;
-    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:center;
+    flex-wrap:wrap;
+   
 }
 @media (min-width: 768px) {
     .selectionMenu
@@ -16,36 +22,26 @@
         flex-direction: row;
     }
 }
-.selectionMenu>div{
+.comic{
     
-    width: 100%;
 
 }
 .selectionMenu img{
     width: 30vh;
     height: auto;
 }
-.Spider-Man_616
+.button
 {
-    
+    background-color: transparent;
+    transition: 0.5s;
 }
-.Spider-Man_2000
+button:hover
 {
-   
+    height: 55vh;
+    background-color: hwb(0 24% 0% / 0.767);
+    border-radius: 0%;
 }
-.Spider-Man_2018
-{
-    
-}
-.backround-Box {
-    position: sticky;
-   justify-self: center;
-    background-color: #ff5722; /* A vibrant orange color */
-    width: 100vh;              /* Sets the width of your box */
-    height: 2000px;             /* Sets the height of your box */
-    border-radius: 30px;  
-    max-height: 50%;      /* Optional: rounds the corners slightly */
-}
+
 
 
 
