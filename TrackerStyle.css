@@ -1,0 +1,114 @@
+.container
+{
+    
+    height: 97vh;
+    width: 100%;
+
+}
+.layout
+{
+    display: flex;/*enables flexbox*/
+    flex-direction: row;
+    justify-content: space-around;/*horrizontal position*/
+    align-items: center;/*verticle position*/
+    
+    
+}
+.comic
+{
+    border: 1px solid rgb(89, 84, 84);
+    
+    height: 50vh;
+    
+}
+#header
+{
+    display: flex;
+    justify-content: space-around;
+    height: 8vh;
+    
+}
+.hbutton
+{
+    
+    border: none;
+    background-color: #DB2B39;
+    border-radius: 1000%;
+    height: 9vh;
+    width: 9vh;
+
+}
+button:hover
+{
+    
+    background-color: #a02020e7;
+    
+}
+.read
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    font-size: 2em
+    
+
+}
+#back
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+#Arrow-Button-Circle-Left--Streamline-Ultimate
+{
+    width:9vh;
+    height: 9vh;
+}
+  
+#log
+{
+
+     width: 60px;
+    height: 60px;
+}
+#main
+{
+    background-color:#29335C;
+    border-radius: 5%;
+    height: 70vh;
+}
+#footer
+{
+    display: flex;
+    height: 20vh;
+    justify-content: space-around;
+    align-items: center;
+}
+.fbutton
+{
+
+    border: none;
+    background-color: #b2222e;
+    
+}
+#prev
+{
+    height: 100%;
+    width:25%;
+/* show image of pre comic in database*/
+}
+#readCheck
+{
+height: 100%;
+width:50%
+}
+#next
+{
+    height: 100%;
+    width:25%;
+    /* show image of next comic in database*/
+}

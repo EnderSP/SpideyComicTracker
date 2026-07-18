@@ -26,13 +26,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items:center;
-    flex-wrap:wrap;
+    
+    
    
 }
 .comic{
-    
-
+  
+  justify-content: center;
 }
 .selectionMenu img{
     width: 30vh;
@@ -40,6 +40,7 @@
 }
 .button
 {
+    
     background-color: transparent;
     transition: 0.5s;
 }
@@ -50,34 +51,43 @@ button:hover
     border-radius: 0%;
 }
 
-@media (max-width: 796px) {
+@media (max-width: 750px) {
+    /*spaces the buttons only when verticle so theyre not touchin*/
+    .button{
+        margin-top: 2%;
+    }
+    
     .selectionMenu
     {
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: flex-start;/*starts column from top instead of center so nothing pops up over the top*/
+        align-items: center;
+        
     }
     button:hover
 {
-    width: 100vw;
+    width: 100vw;/*makes button effect stretch horizontal for verticle layouts*/
     border: none;
     background-color: #DB2B39;
-    border-radius: 100%;
+    border-radius: 0%;
 }
-.background-Box
+
+.background-Box2
 {
-    position: absolute;
     width: 100vw;
-    height: 150vh;
+    height: 143vh;
     align-items: reverse;
     background-color: #29335C;
     border-radius: 10%;
     
 }
 }
- @media (min-width: 796px) {
+ @media (min-width: 750px) {
     .selectionMenu
     {
         height: 100vh;
         flex-direction: row;
+        align-items: center;
     }
     button:hover
 {
