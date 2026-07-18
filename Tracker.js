@@ -1,4 +1,4 @@
-//code for tracker  functionality
+//code for tracker button functionality
 
 const backButton = document.getElementById('back');
 backButton.addEventListener('click',function(){
