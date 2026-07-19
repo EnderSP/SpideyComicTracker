@@ -14,7 +14,7 @@
                 <form class="form" action ="">
                     <h2> Login</h2>
                  <div class="inD">
-                    <input type="text" id="Email"placeholder="Enter Email:">
+                    <input type="text" id="Email"placeholder="Enter UserName or Email:">
                 </div>
                 <div class="inD">
                     <input type="text" id="Password"placeholder="Enter Password:">
@@ -29,6 +29,9 @@
             <div class="form-box" id ="RegisterForm">
                 <form class="form" action ="">
                     <h2> Register</h2>
+                <div class="inD">
+                    <input type="text" id="UserName"placeholder="Enter UserName:">
+                </div>
                  <div class="inD">
                     <input type="text" id="Email"placeholder="Enter Email:">
                 </div>
