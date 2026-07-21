@@ -26,20 +26,20 @@ $username = isset($_SESSION['Name']) ? $_SESSION['Name'] : 'Guest';
                     <div class = "comic" id="Spider-Man_616">
                          
                               <button class=" button" name ="btn_616">
-                                   <img class="OG" src= "images\616Vol1.jpg" alt="616">
+                                   <img class="OG" src= "images\S616_1.jpg" alt="616">
                               </button>
                               
                               
                     </div>
                     <div class ="comic" id="Spider-Man_2000">
                               <button class="button" name ="btn_2000">
-                                   <img class="NOG" src= "images\UltimateVol1.jpg" alt="2000">
+                                   <img class="NOG" src= "images\S2000_1.jpg" alt="2000">
                               </button>
                               
                     </div>
                     <div class ="comic" id="Spider-Man_2018">
                               <button  class="button" name = "btn_2018">
-                                   <img class="NNOG" src= "images\NewUltimateVol1.jpg" alt="2018">
+                                   <img class="NNOG" src= "images\S2018_1.jpg" alt="2018">
                               </button>
                               
 

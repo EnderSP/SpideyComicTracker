@@ -27,18 +27,23 @@ require_once 'TrackerLogic.php';
         </button>
         
      </div>
-        <div class="layout" id="main">
+     <div class="layout" id="main">
 
             <img class="comic" src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
 
-        </div>
-        <div class="layout" id="footer">
+     </div>
+    <div class="footer" id="footer">
 
-            <button class ="fbutton" name="prev"> pre</button>
-            <button class ="fbutton" name="readCheck"> mark as read</button>
-            <button class ="fbutton" name="next" > next</button>
+            <button class ="submit" id ="prev" name="prev" method = "post"> 
+                <img  src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
+                    
+            </button>
+            <button class ="submit" id="readCheck"> mark as read</button>
+            <button class ="submit" id ="next" name="next" >
+                  <img  src="<?php echo htmlspecialchars($_SESSION['nextImg']); ?>" alt="nextComic">
+            </button>
 
-        </div>
+    </div>
 
         
 

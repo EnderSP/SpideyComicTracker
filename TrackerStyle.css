@@ -14,13 +14,7 @@
     
     
 }
-.comic
-{
-    border: 1px solid rgb(89, 84, 84);
-    
-    height: 50vh;
-    
-}
+
 #header
 {
     display: flex;
@@ -81,34 +75,52 @@ button:hover
     border-radius: 5%;
     height: 70vh;
 }
-#footer
+.footer
 {
     display: flex;
     height: 20vh;
     justify-content: space-around;
     align-items: center;
 }
-.fbutton
-{
 
-    border: none;
-    background-color: #b2222e;
-    
-}
 #prev
 {
-    height: 100%;
+    height: 20vh;
     width:25%;
 /* show image of pre comic in database*/
 }
+
 #readCheck
 {
-height: 100%;
-width:50%
+    width:50vw;
 }
 #next
 {
-    height: 100%;
+    height: 20vh;
     width:25%;
     /* show image of next comic in database*/
 }
+.footer img{
+    
+    height: 20vh;
+   
+    
+}
+.submit
+
+{
+    height:20vh;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+.readCheck
+{
+    width: 50vw;
+}
+
+.comic{
+    height :50vh;
+}
+

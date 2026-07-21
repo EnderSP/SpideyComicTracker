@@ -2,5 +2,5 @@
 
 const backButton = document.getElementById('back');
 backButton.addEventListener('click',function(){
-    window.location.href="SelectionScreen.html";
+    window.location.href="SelectionScreen.php";
 })
