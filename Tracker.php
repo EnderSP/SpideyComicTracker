@@ -1,3 +1,6 @@
+<?php
+require_once 'TrackerLogic.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +29,7 @@
      </div>
         <div class="layout" id="main">
 
-            <img class="comic" src= "images\616Vol1.jpg" alt="616">
+            <img class="comic" src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
 
         </div>
         <div class="layout" id="footer">
