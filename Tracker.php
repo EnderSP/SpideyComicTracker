@@ -32,10 +32,10 @@ require_once 'TrackerLogic.php';
             <img class="comic" src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
 
      </div>
-    <div class="footer" id="footer">
+    <form class="footer" action="TrackerLogic.Php" id="footer" method="post">
 
-            <button class ="submit" id ="prev" name="prev" method = "post"> 
-                <img  src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
+            <button class ="submit" id ="prev" name="prev"> 
+                <img  src="<?php echo htmlspecialchars($_SESSION['preImg']); ?>" alt="previous Comic">
                     
             </button>
             <button class ="submit" id="readCheck"> mark as read</button>
@@ -43,7 +43,7 @@ require_once 'TrackerLogic.php';
                   <img  src="<?php echo htmlspecialchars($_SESSION['nextImg']); ?>" alt="nextComic">
             </button>
 
-    </div>
+    </form>
 
         
 

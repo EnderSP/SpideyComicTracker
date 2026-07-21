@@ -3,51 +3,57 @@
 session_start();
 require_once 'config.php';
 
+//createa function to run very time i wanna reload images
+function loadCImgs($conn)
+{
+    $tableName= $_SESSION['comicDB'];
+    if(!isset($_SESSION['current']))
+        {
+            $currentResult= $conn->query("SELECT LastRead FROM userlr WHERE Email='{$_SESSION['Email']}' AND Sid ='{$_SESSION['comicDB']}'");
+            if($currentResult ->num_rows>0)
+            {
+                $currentRow= $currentResult->fetch_assoc();
+                $_SESSION['current']= $currentRow['LastRead'];
+            }
+            else{
+                $_SESSION['current']=1;
+            }
+        }
+
+    $_SESSION['next']=$_SESSION['current'] +1;
+    $_SESSION['pre']=$_SESSION['current'] -1;
+
+    $_SESSION['currentImg']= getImagePath($conn, $tableName, $_SESSION['current']);
+    $_SESSION['nextImg'] =getImagePath($conn, $tableName, $_SESSION['next']);
+    $_SESSION['preImg'] =getImagePath($conn, $tableName, $_SESSION['pre']);
+        
+}
+function getImagePath($conn, $tableName, $comicID)
+{
+    
+    $result = $conn->query(" SELECT ImagePath FROM $tableName WHERE ComicId = $comicID");
+        if($result->num_rows>0)
+            {
+                return $result->fetch_assoc()['ImagePath'];
+            }
+        return "images/OIP.webp";
+}
 
 
-
-//This will run anytime next is clicked
-
-//set current to Last Read for seriese
-$currentResult = $conn->query("SELECT LastRead FROM userlr WHERE Email = '{$_SESSION['Email']}' AND Sid = '{$_SESSION['comicDB']}'");
-
-if ($currentResult ->num_rows>0)
+if (isset($_POST['next']))
     {
-        //confirmed row existed that matched then save the actual information to a proper row var 
-        $userReadRow= $currentResult->fetch_assoc();
-
-        //set the currenttly readng var to whatever users last read comic segment was as order id
-        $_SESSION['current']= $userReadRow['LastRead'];
-        //Also set nextread and preRead, to pull imagesfrom
-        $_SESSION['next']= $userReadRow['LastRead']+1;
-        $_SESSION['pre']= $userReadRow['LastRead']-1;
+        $_SESSION['current'] +=1;
+        header("Location: Tracker.php");
     }
-    //no fall back because last read is default set to 1
-
-
-    //no we  use similar method to set image url to session var
-    $tableName=$_SESSION['comicDB'];
-    //save table to another current row
-    //this section saves current image
-    $currentImgResult= $conn->query("Select ImagePath FROM $tableName WHERE ComicId= '{$_SESSION['current']}'");
-    if($currentImgResult->num_rows>0)
-        {
-            //save actual aociated row data to var to pull from
-            $currentImgRow=$currentImgResult->fetch_assoc();
-            $_SESSION['currentImg']= $currentImgRow['ImagePath'];
-
-        }
-    else{
-        $_SESSION['currentImg']="images\OIP.webp";
+if (isset($_POST['prev']))
+    {
+        $_SESSION['current'] -=1;
+        header("Location: Tracker.php");
     }
-    //using the sam elogic and checks for current image we seach for the same table with a id of one graterthan the current id to pull future image
-    $nextImgResults= $conn->query("SELECT ImagePath FROM $tableName WHERE ComicId= '{$_SESSION['next']}'");
-    if($nextImgResults ->num_rows>0)
-        {
-            $nextimgRow=$nextImgResults->fetch_assoc();
-            $_SESSION['nextImg']= $nextimgRow['ImagePath'];
-        }
-    else{
-        $_SESSION['nextImg']="images\OIP.webp";
-    }
+
+loadCImgs($conn);
+
+echo $_SESSION['current'];
+    
+
 ?>

@@ -8,6 +8,7 @@ if(isset($_POST['btn_616']))
         $comicDB= "S616";
         $_SESSION['comicDB']= $comicDB;
         header("Location: Tracker.php");
+        
     }
 if(isset($_POST['btn_2000']))
     {

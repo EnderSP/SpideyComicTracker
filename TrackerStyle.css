@@ -75,7 +75,7 @@ button:hover
     border-radius: 5%;
     height: 70vh;
 }
-.footer
+#footer
 {
     display: flex;
     height: 20vh;
@@ -98,6 +98,7 @@ button:hover
 {
     height: 20vh;
     width:25%;
+    
     /* show image of next comic in database*/
 }
 .footer img{
