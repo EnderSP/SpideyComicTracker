@@ -31,9 +31,9 @@
         </div>
         <div class="layout" id="footer">
 
-            <button class ="fbutton" id="prev"> pre</button>
-            <button class ="fbutton" id="readCheck"> mark as read</button>
-            <button class ="fbutton" id="next"> next</button>
+            <button class ="fbutton" name="prev"> pre</button>
+            <button class ="fbutton" name="readCheck"> mark as read</button>
+            <button class ="fbutton" name="next" > next</button>
 
         </div>
 

@@ -1,4 +1,7 @@
-
+.form
+{
+    display:block;
+}
 .background-Box
 {
     position: absolute;

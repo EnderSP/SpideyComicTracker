@@ -26,6 +26,9 @@ if(isset($_POST['Register']))
     else
         {
             $conn->query("INSERT INTO users(Username, Email, Password) VALUES('$username', '$email', '$password')");
+            $conn->query("INSERT INTO userlr(Email, Sid) VALUES('$email', 'S616')");
+            $conn->query("INSERT INTO userlr(Email, Sid) VALUES('$email', 'S2000')");
+            $conn->query("INSERT INTO userlr(Email, Sid) VALUES('$email', 'S2018')");
             
         }
      header("Location: Login.php");
