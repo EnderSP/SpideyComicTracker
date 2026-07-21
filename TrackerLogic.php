@@ -47,7 +47,11 @@ if (isset($_POST['next']))
     }
 if (isset($_POST['prev']))
     {
+        if($_SESSION['current']!=1)
+            {
         $_SESSION['current'] -=1;
+        header("Location: Tracker.php");
+            }
         header("Location: Tracker.php");
     }
 
