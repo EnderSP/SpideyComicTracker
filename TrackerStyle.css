@@ -71,10 +71,13 @@ button:hover
 }
 #main
 {
-    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     border-radius: 5%;
     height: 70vh;
 }
+
 #footer
 {
     display: flex;
@@ -87,12 +90,17 @@ button:hover
 {
     height: 20vh;
     width:25%;
+    
 /* show image of pre comic in database*/
 }
 
 #readCheck
 {
     width:50vw;
+    border-style:solid;
+    background-color: #b52330;
+    border-color: #b52330;
+    border-radius: 10px;
 }
 #next
 {
@@ -123,5 +131,7 @@ button:hover
 
 .comic{
     height :50vh;
+    border-style: 2vh solid;
+    border-color: #7a7a7a;
 }
 

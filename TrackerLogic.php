@@ -36,7 +36,7 @@ function getImagePath($conn, $tableName, $comicID)
             {
                 return $result->fetch_assoc()['ImagePath'];
             }
-        return "images/OIP.webp";
+        return "images/blank.jpg";
 }
 //boolean check to see if user has read issue
 
@@ -65,12 +65,12 @@ function setBackground($conn)
 {
     if(isRead($conn,$_SESSION['Email'] ,$_SESSION['comicDB'],$_SESSION['current']))
             {
-                $_SESSION['backgroundColor']="#417219";
+                $_SESSION['backgroundColor']="linear-gradient(to bottom, #29335C, #708cf8);";
 
             }
         else
             {
-                $_SESSION['backgroundColor']="#29335C";
+                $_SESSION['backgroundColor']="linear-gradient(to bottom, #29335C, #29335C);";
             }
 }
 
@@ -96,7 +96,10 @@ if (isset($_POST['readCheck']))
         if(isRead($conn,$_SESSION['Email'] ,$_SESSION['comicDB'],$_SESSION['current']))
             {
                 // alreadye xists Remove from table// unread
-
+            $stmt2=$conn->prepare("DELETE FROM userreadlist WHERE Email=? AND Sid=? AND ComicID=? ");//using bind parsm to prevent ill intent emial injectins as well as to convert variables irectly to string on creation
+            $stmt2->bind_param("ssi", $_SESSION['Email'], $_SESSION['comicDB'],$_SESSION['current']);
+            $stmt2->execute();
+            $stmt2->close();
                 header("Location: Tracker.php");
         exit();
             }
@@ -111,10 +114,10 @@ if (isset($_POST['readCheck']))
             //turn to last read
             $stmt1=$conn->prepare("UPDATE userlr SET LastRead =? WHERE Email= ? AND Sid =?");
             $stmt1->bind_param("iss",$_SESSION['current'], $_SESSION['Email'], $_SESSION['comicDB']);
-            $stmt->execute();
-            $stmt->close();
+            $stmt1->execute();
+            $stmt1->close();
 
-
+             header("Location: Tracker.php");
 
             //Add text update
         exit();

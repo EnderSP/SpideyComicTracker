@@ -8,6 +8,7 @@
     background-color: #29335C;
     border-radius: 10%;
     
+    
 }
 .background-Box2
 {
@@ -15,7 +16,7 @@
     width: 100vw;
     height: 30vh;
     align-items: reverse;
-    background-color: #29335C;
+    background-image: linear-gradient(to Top , #29335C, #3d5681);
     border-radius: 0%;
     
 }
@@ -77,10 +78,11 @@ button:hover
     width: 100vw;
     height: 143vh;
     align-items: reverse;
-    background-color: #29335C;
+    background-image: linear-gradient(to bottom , #29335C, #5172aa);
     border-radius: 10%;
     
 }
+
 }
  @media (min-width: 750px) {
     .selectionMenu

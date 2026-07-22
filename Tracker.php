@@ -27,11 +27,25 @@ require_once 'TrackerLogic.php';
         </button>
         
      </div>
-     <div class="layout" id="main" style="background-color: <?php echo htmlspecialchars($_SESSION['backgroundColor']); ?>;">
 
+
+
+     <div class="layout" id="main" style="background-image: <?php echo htmlspecialchars($_SESSION['backgroundColor']); ?>;">
+    <div class="title">
+        spider-man
+    </div>
+        <div>
+    
             <img class="comic" src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
 
+        </div>
+    <div class="Inum">
+        issue1
+    </div>
      </div>
+
+
+
     <form class="footer" action="TrackerLogic.Php" id="footer" method="post">
 
             <button class ="submit" id ="prev" name="prev"> 
