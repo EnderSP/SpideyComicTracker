@@ -27,7 +27,7 @@ require_once 'TrackerLogic.php';
         </button>
         
      </div>
-     <div class="layout" id="main">
+     <div class="layout" id="main" style="background-color: <?php echo htmlspecialchars($_SESSION['backgroundColor']); ?>;">
 
             <img class="comic" src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
 
@@ -38,7 +38,7 @@ require_once 'TrackerLogic.php';
                 <img  src="<?php echo htmlspecialchars($_SESSION['preImg']); ?>" alt="previous Comic">
                     
             </button>
-            <button class ="submit" id="readCheck"> mark as read</button>
+            <button class ="submit" id="readCheck" name="readCheck"> mark as read</button>
             <button class ="submit" id ="next" name="next" >
                   <img  src="<?php echo htmlspecialchars($_SESSION['nextImg']); ?>" alt="nextComic">
             </button>
