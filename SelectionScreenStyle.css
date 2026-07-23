@@ -1,4 +1,16 @@
 
+.greet
+{
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+    height: 100%;
+}
 .background-Box
 {
     position: absolute;
@@ -19,11 +31,14 @@
     background-image: linear-gradient(to Top , #29335C, #3d5681);
     border-radius: 0%;
     
+    
+    
+    
 }
 .selectionMenu {
     position:relative;
    width: 100vw;
-   height: 95vh;
+   height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -51,6 +66,7 @@ button:hover
     background-color: #DB2B39;
     border-radius: 0%;
 }
+
 
 @media (max-width: 750px) {
     /*spaces the buttons only when verticle so theyre not touchin*/
@@ -97,5 +113,12 @@ button:hover
     border: none;
     background-color: #DB2B39;
     border-radius: 0%;
+    
 }
+button img:hover
+{
+    transform: translateY(-14px);
+    
+}
+
 }

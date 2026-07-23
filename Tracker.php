@@ -20,10 +20,10 @@ require_once 'TrackerLogic.php';
         </button>
 
         <div class ="read"> 
-            currently reading
+           <b > currently reading</b>
         </div>
-        <button class ="hbutton" id="log"> 
-            log
+        <button class ="hbutton" id="log">
+            
         </button>
         
      </div>
@@ -31,17 +31,20 @@ require_once 'TrackerLogic.php';
 
 
      <div class="layout" id="main" style="background-image: <?php echo htmlspecialchars($_SESSION['backgroundColor']); ?>;">
-    <div class="title">
-        spider-man
-    </div>
+        
+        <div >
+          <p class ="title">  <?php echo htmlspecialchars($_SESSION['currentIssue']); ?></p>
+        </div>
+
         <div>
     
             <img class="comic" src="<?php echo htmlspecialchars($_SESSION['currentImg']); ?>" alt="current Comic">
 
         </div>
-    <div class="Inum">
-        issue1
-    </div>
+
+        <div >
+           <p class="range"> issues #<?php echo htmlspecialchars($_SESSION['currentStart']); ?>-#<?php echo htmlspecialchars($_SESSION['currentEnd']); ?></p>
+        </div>
      </div>
 
 
@@ -52,7 +55,9 @@ require_once 'TrackerLogic.php';
                 <img  src="<?php echo htmlspecialchars($_SESSION['preImg']); ?>" alt="previous Comic">
                     
             </button>
-            <button class ="submit" id="readCheck" name="readCheck"> mark as read</button>
+            <button class ="submit" id="readCheck" name="readCheck">
+                 <p class="readStatus"><?php echo htmlspecialchars($_SESSION['readStatus']); ?></p>
+        </button>
             <button class ="submit" id ="next" name="next" >
                   <img  src="<?php echo htmlspecialchars($_SESSION['nextImg']); ?>" alt="nextComic">
             </button>

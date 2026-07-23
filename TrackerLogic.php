@@ -26,7 +26,12 @@ function loadCImgs($conn)
     $_SESSION['currentImg']= getImagePath($conn, $tableName, $_SESSION['current']);
     $_SESSION['nextImg'] =getImagePath($conn, $tableName, $_SESSION['next']);
     $_SESSION['preImg'] =getImagePath($conn, $tableName, $_SESSION['pre']);
-        
+
+// SET current IssueName TO DISPLAY
+
+ $_SESSION['currentIssue']= getIssueName($conn,$tableName,$_SESSION['current']);
+$_SESSION['currentStart']= getIssueStart($conn,$tableName,$_SESSION['current']);
+$_SESSION['currentEnd']= getIssueEnd($conn,$tableName,$_SESSION['current']);       
 }
 function getImagePath($conn, $tableName, $comicID)
 {
@@ -38,14 +43,41 @@ function getImagePath($conn, $tableName, $comicID)
             }
         return "images/blank.jpg";
 }
+
+
+
+function getIssueName($conn, $tableName, $comicID)
+{
+    $result = $conn->query("SELECT ComicName FROM $tableName WHERE ComicId =$comicID");
+    if($result ->num_rows>0)
+        {
+            return $result->fetch_assoc()['ComicName'];
+        }
+    return "Issue Name";
+}
+function getIssueStart($conn, $tableName, $comicID)
+{
+    $result = $conn->query("SELECT IssueStart FROM $tableName WHERE ComicId =$comicID");
+    if($result ->num_rows>0)
+        {
+            return $result->fetch_assoc()['IssueStart'];
+        }
+    return "Issue 1";
+}
+function getIssueEnd($conn,$tableName,$comicID)
+{
+    $result =$conn->query("SELECT IssueEnd FROM $tableName WHERE ComicId=$comicID");
+    if($result->num_rows>0)
+        {
+            return $result->fetch_assoc()['IssueEnd'];
+        }
+     
+}
+
+
+
+
 //boolean check to see if user has read issue
-
-
-
-
-
-
-
 /*CODE IN EMAIL BIND PARAMS TO PREVENT INJECTIONS  */
 function isRead($conn, $Email,$Sid, $comicID)
 {
@@ -66,19 +98,49 @@ function setBackground($conn)
     if(isRead($conn,$_SESSION['Email'] ,$_SESSION['comicDB'],$_SESSION['current']))
             {
                 $_SESSION['backgroundColor']="linear-gradient(to bottom, #29335C, #708cf8);";
+                $_SESSION['readStatus']="Completed!";
 
             }
         else
             {
                 $_SESSION['backgroundColor']="linear-gradient(to bottom, #29335C, #29335C);";
+                $_SESSION['readStatus']="Incomplete";
             }
 }
 
 if (isset($_POST['next']))
     {
-        $_SESSION['current'] +=1;
-        header("Location: Tracker.php");
+    $tableName= $_SESSION['comicDB'];
+    $sql= "SELECT 1 FROM $tableName WHERE ComicId = ?";
+    $stmt= $conn ->prepare($sql);
+    if (!$stmt)
+        {
+           die("couldnt prepare query". $conn->error);
+        }
+    $nextRow=$_SESSION['current']+1;
+    $stmt -> bind_param("i", $nextRow);
+     $stmt -> execute();
+    $result =$stmt->get_result();
+    
+    if ($result->num_rows>0)
+        {
+            $_SESSION['current'] +=1;
+            
+        }
+    else{
+        $_SESSION['current'];
+        
+    }
+header("Location: Tracker.php");
         exit();
+
+
+
+
+
+
+
+
     }
 if (isset($_POST['prev']))
     {
@@ -100,6 +162,8 @@ if (isset($_POST['readCheck']))
             $stmt2->bind_param("ssi", $_SESSION['Email'], $_SESSION['comicDB'],$_SESSION['current']);
             $stmt2->execute();
             $stmt2->close();
+
+            
                 header("Location: Tracker.php");
         exit();
             }
@@ -129,7 +193,7 @@ setBackground($conn);
 
 // Mark
 
-echo $_SESSION['current'];
+
      
 
 ?>

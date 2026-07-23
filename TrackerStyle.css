@@ -28,23 +28,18 @@
     border: none;
     background-color: #DB2B39;
     border-radius: 1000%;
-    height: 9vh;
-    width: 9vh;
+    height: 8vh;
+    width: 8vh;
 
 }
-button:hover
-{
-    
-    background-color: #a02020e7;
-    
-}
+
 .read
 {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    
     width: 50vw;
     font-size: 2em
+    
     
 
 }
@@ -53,6 +48,7 @@ button:hover
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
 
 }
@@ -76,38 +72,81 @@ button:hover
     flex-direction: column;
     border-radius: 5%;
     height: 70vh;
+    border-style:  inset;
+    border-color: rgb(46, 63, 107);
+}
+.title
+{
+    font-family:fantasy;
+    font-size: 1.5em;
+}
+.range
+{
+    font-family:fantasy;
+    font-size: 2em;
 }
 
-#footer
+.footer
 {
     display: flex;
     height: 20vh;
     justify-content: space-around;
     align-items: center;
+    
+    
 }
 
 #prev
 {
     height: 20vh;
     width:25%;
-    
+    cursor:grabbing;
 /* show image of pre comic in database*/
+}
+#prev img:hover{
+    transform:scale(1.3);
+    transform: translateY(-7px);
+    
 }
 
 #readCheck
 {
-    width:50vw;
-    border-style:solid;
-    background-color: #b52330;
-    border-color: #b52330;
+    width:45%;
+    
+    background-color: #DB2B39;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-style:  double;
+    border-color: #8f2c34;
 }
+#readCheck:hover
+{
+    background-color: #8f2c34 ;
+    cursor: pointer;
+
+}
+
+
+.read{
+    display:flex;
+    justify-content:center;
+
+}
+
 #next
 {
     height: 20vh;
     width:25%;
+    cursor: grabbing;
     
     /* show image of next comic in database*/
+}
+#next img:hover{
+    transform:scale(1.3);
+    transform: translateY(-7px);
+    
 }
 .footer img{
     
@@ -133,5 +172,10 @@ button:hover
     height :50vh;
     border-style: 2vh solid;
     border-color: #7a7a7a;
+}
+.readStatus
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.0rem;
 }
 

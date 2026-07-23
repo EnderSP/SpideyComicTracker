@@ -12,7 +12,7 @@ $username = isset($_SESSION['Name']) ? $_SESSION['Name'] : 'Guest';
 </head>
 <body style="background-color: #DB2B39;">
 
-<h1>Welcome, <?php echo htmlspecialchars($username); ?></h1>
+<h1 class= "greet">Welcome, <?php echo htmlspecialchars($username); ?></h1>
 
 
 
