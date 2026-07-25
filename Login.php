@@ -8,7 +8,7 @@ $errors =[
 ];
 $activeForm=$_SESSION['active-form'] ?? 'login';
 
-
+session_unset();
 
 
 function showError($error)
