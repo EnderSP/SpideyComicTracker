@@ -5,6 +5,7 @@ require_once 'config.php';
 
 if(isset($_POST['Register']))
     {
+        unset($_SESSION['login-error']);
         $username = trim($_POST['UserName']);
         $email = trim($_POST['Email']);
         $password = password_hash($_POST['Password'], PASSWORD_DEFAULT);
@@ -45,6 +46,7 @@ if(isset($_POST['Register']))
 <?php
 if (isset($_POST['Login']))
     {
+        unset($_SESSION['register-error']);
     $password =$_POST['Password'];
     $name=$_POST['EmailUser'];
 
@@ -62,11 +64,12 @@ if (isset($_POST['Login']))
                     header("Location: SelectionScreen.php");
                     exit();
                 }
+            $_SESSION['login_error']='Incorrect Pasword';
         }
 
 
     
-    $_SESSION['Login_error']='Incorrect email or password';
+    $_SESSION['login_error']='Incorrect email ';
     $_SESSION['active-form']='login';
     header("Location: Login.php");
     exit();

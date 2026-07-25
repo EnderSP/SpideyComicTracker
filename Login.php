@@ -1,3 +1,26 @@
+
+<?php
+session_start();
+
+$errors =[
+    'login'=> $_SESSION['login_error'] ?? '',
+    'register'=> $_SESSION['register_error'] ?? ''
+];
+$activeForm=$_SESSION['active-form'] ?? 'login';
+
+
+
+
+function showError($error)
+{
+    return !empty($error) ? "<p class= 'error message'> $error </p>" : '';
+}
+
+function isActiveForm($formName, $activeForm)
+{
+    return $formName === $activeForm ? 'active' : '';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +33,17 @@
 <body>
 
         <div class ="container">
-            <div class="form-box active"  id ="loginForm">
+            <div class="form-box <?=isActiveForm('login',$activeForm)?>"  id ="loginForm">
                 <form class="form"  action ="Login_register.php" method="post">
                     <h2> Login</h2>
+                    <?php echo showError($errors['login']);?>
                  <div class="inD">
                     <input type="text" name="EmailUser"placeholder="Enter UserName or Email:">
                 </div>
                 <div class="inD">
                     <input type="text" name="Password"placeholder="Enter Password:">
                 </div>
+                
                 <p> no account?<a href="#" onclick="showForm('RegisterForm')" >register</a> </p> 
                     <button type="submit" name="Login">Login</button>
                     
@@ -26,11 +51,12 @@
                    
                 
             </div>
-            <div class="form-box" id ="RegisterForm">
+            <div class="form-box <?=isActiveForm('register',$activeForm)?>" id ="RegisterForm">
                 <!-- Action will choose wht pho file to send the info to -->
                 <form class="form"  action ="Login_Register.php" method="post"><!-- Post is the method to pull the data from the form later on in
                     php code to the query searhc the sql db, will not need for comic databases as it will not include user inputs -->
                     <h2> Register</h2>
+                     <?php echo showError($errors['register']);?>
                 <div class="inD">
                     <input type="text" name="UserName"placeholder="Enter UserName:">
                 </div>
