@@ -75,15 +75,15 @@
     border-style:  inset;
     border-color: rgb(46, 63, 107);
 }
-.title
-{
-    font-family:fantasy;
-    font-size: 1.5em;
+.title {
+font-family:fantasy;
+    font-size: clamp(1.5rem, 1vw, 1rem);
+
 }
 .range
 {
     font-family:fantasy;
-    font-size: 2em;
+    font-size: clamp(1.5rem, 1vw, 1rem);
 }
 
 .footer
@@ -172,6 +172,7 @@
     height :50vh;
     border-style: 2vh solid;
     border-color: #7a7a7a;
+    
 }
 .readStatus
 {

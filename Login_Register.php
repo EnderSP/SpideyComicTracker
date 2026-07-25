@@ -5,10 +5,17 @@ require_once 'config.php';
 
 if(isset($_POST['Register']))
     {
-        $username =$_POST['UserName'];
-        $email=$_POST['Email'];
-        $password= password_hash($_POST['Password'],PASSWORD_DEFAULT);
-        
+        $username = trim($_POST['UserName']);
+        $email = trim($_POST['Email']);
+        $password = password_hash($_POST['Password'], PASSWORD_DEFAULT);
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL))
+        {
+            $_SESSION['register_error'] = 'Please enter a valid email address';
+            $_SESSION['active-form'] = 'register';
+            header("Location: Login.php");
+            exit();
+        }
     
     $checkEmail = $conn->query("SELECT Email FROM users WHERE Email= '$email'" );
     $checkUsername = $conn->query("SELECT Username FROM users WHERE Username= '$username'" );

@@ -29,7 +29,7 @@ function loadCImgs($conn)
 
 // SET current IssueName TO DISPLAY
 
- $_SESSION['currentIssue']= getIssueName($conn,$tableName,$_SESSION['current']);
+$_SESSION['currentIssue']= getIssueName($conn,$tableName,$_SESSION['current']);
 $_SESSION['currentStart']= getIssueStart($conn,$tableName,$_SESSION['current']);
 $_SESSION['currentEnd']= getIssueEnd($conn,$tableName,$_SESSION['current']);       
 }
