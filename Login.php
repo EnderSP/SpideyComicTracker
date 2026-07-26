@@ -41,7 +41,7 @@ function isActiveForm($formName, $activeForm)
                     <input type="text" name="EmailUser"placeholder="Enter UserName or Email:">
                 </div>
                 <div class="inD">
-                    <input type="text" name="Password"placeholder="Enter Password:">
+                    <input type="password" name="Password" placeholder="Enter Password:">
                 </div>
                 
                 <p> no account?<a href="#" onclick="showForm('RegisterForm')" >register</a> </p> 
@@ -64,7 +64,7 @@ function isActiveForm($formName, $activeForm)
                     <input type="text" name="Email"placeholder="Enter Email:">
                 </div>
                 <div class="inD">
-                    <input type="text" name="Password"placeholder="Enter Password:">
+                    <input type="password" name="Password" placeholder="Enter Password:">
                 </div>
                 <p> Already have an accoun?<a href="#" onclick ="showForm('loginForm')">Login</a></p> 
                     <button type="submit" name="Register" >Register</button>

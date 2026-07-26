@@ -73,4 +73,7 @@ p a{
 p:hover{
     text-decoration:underline;
 }
-
+#password
+{
+    filter:blur();
+}

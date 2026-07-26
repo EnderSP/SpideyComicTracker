@@ -64,12 +64,12 @@ if (isset($_POST['Login']))
                     header("Location: SelectionScreen.php");
                     exit();
                 }
-            $_SESSION['login_error']='Incorrect Pasword';
+            
         }
 
 
     
-    $_SESSION['login_error']='Incorrect email ';
+    $_SESSION['login_error']='Incorrect information  ';
     $_SESSION['active-form']='login';
     header("Location: Login.php");
     exit();
