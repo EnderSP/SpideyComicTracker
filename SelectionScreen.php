@@ -8,11 +8,12 @@ $username = isset($_SESSION['Name']) ? $_SESSION['Name'] : 'Guest';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="SelectionScreenStyle.css">
+
     <title>webslinger</title>
 </head>
 <body style="background-color: #DB2B39;">
 
-<h1 class= "greet">Welcome, <?php echo htmlspecialchars($username); ?></h1>
+<h1 class="greet">Welcome,<?php echo htmlspecialchars($username); ?></h1>
 
 
 
