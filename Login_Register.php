@@ -56,7 +56,7 @@ if (isset($_POST['Login']))
         //time means there is only one row for results and it contains total attempts in last 15 min
         $results= $stmt->get_result();
         
-        $attempts = $results->fetch_row()[0]
+        $attempts = $results->fetch_row()[0];
 
         if($attempts >=5)
             {
